@@ -2,6 +2,10 @@ package org.cointracker.transaction.client.etherscan.api;
 
 import org.cointracker.transaction.model.*;
 
+/**
+ * A helper class to convert the API TxnResponse Object to the Model Object
+ * todo: This class needs to be refactored, as it is very tedious and not a clean way to map objects.
+ */
 public class Converter {
 
     public static EthNormalTransaction getEthNormalTransaction(TxnResponse txnResponse) {

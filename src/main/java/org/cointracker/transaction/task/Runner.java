@@ -1,7 +1,6 @@
-package org.cointracker.transaction.script;
+package org.cointracker.transaction.task;
 
 import org.cointracker.transaction.model.*;
-import org.cointracker.transaction.writer.CsvFileWriterFactory;
 
 import java.util.ArrayList;
 import java.util.List;

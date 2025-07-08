@@ -1,6 +1,6 @@
 package org.cointracker.transaction;
 
-import org.cointracker.transaction.script.Runner;
+import org.cointracker.transaction.task.Runner;
 
 import java.util.ArrayList;
 import java.util.List;

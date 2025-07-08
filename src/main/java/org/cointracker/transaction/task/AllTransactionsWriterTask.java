@@ -1,5 +1,6 @@
-package org.cointracker.transaction.script;
+package org.cointracker.transaction.task;
 
+import org.cointracker.transaction.fetch.TransactionsFetcher;
 import org.cointracker.transaction.model.EthTransaction;
 import org.cointracker.transaction.model.TransactionType;
 import org.cointracker.transaction.writer.CsvFileWriterFactory;
@@ -7,6 +8,11 @@ import org.cointracker.transaction.writer.CsvFileWriterFactory;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * This class Fetches all the Transactions and writes them to a csv file.
+ * Since It implements the runnable interface, it can perform the said task independently in a single thread.
+ * @param <T>
+ */
 public class AllTransactionsWriterTask<T extends EthTransaction> implements Runnable {
 
     private final Logger logger;

@@ -1,4 +1,4 @@
-package org.cointracker.transaction.script;
+package org.cointracker.transaction.fetch;
 
 import org.cointracker.transaction.client.EthClient;
 import org.cointracker.transaction.client.EthClientFactory;
@@ -32,6 +32,12 @@ public class TransactionsFetcher<T extends EthTransaction> {
     private static final int ERROR_THRESHOLD = 3;
     private boolean done;
 
+    /**
+     *
+     * @param walletAddress The String wallet address
+     * @param transactionType The enum Transaction Type
+     * @param transactionsConsumer A Consumer Function that takes the List of Transactions as Input
+     */
     public TransactionsFetcher(String walletAddress, TransactionType transactionType,
                                Consumer<List<T>> transactionsConsumer) {
         this.walletAddress = walletAddress;

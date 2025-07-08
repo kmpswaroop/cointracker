@@ -30,11 +30,15 @@ public abstract class AbstractCsvFileWriter<T extends EthTransaction> implements
     @Override
     public void writeToCSV(List<T> txnObjList) {
         try {
-            List<String[]> records = txnObjList.stream()
+            txnObjList.stream()
+                    .map(this::toRecord)
+                    .forEach(csvWriter::writeNext);
+            csvWriter.flush();
+            /*List<String[]> records = txnObjList.stream()
                     .map(this::toRecord)
                     .toList();
             csvWriter.writeAll(records);
-            csvWriter.flush();
+            csvWriter.flush();*/
         } catch(Exception e) {
             String msg = "Error while writing transactions to file " + filePath;
             logger.log(Level.SEVERE, msg, e);
